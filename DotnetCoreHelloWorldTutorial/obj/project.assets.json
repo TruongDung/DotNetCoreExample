@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual-2007-project\\DotnetCoreHelloWorldTutorial\\DotnetCoreHelloWorldTutorial\\DotnetCoreHelloWorldTutorial.csproj",
+      "projectUniqueName": "D:\\Repos\\DotNetCoreExample\\DotnetCoreHelloWorldTutorial\\DotnetCoreHelloWorldTutorial.csproj",
       "projectName": "DotnetCoreHelloWorldTutorial",
-      "projectPath": "D:\\Visual-2007-project\\DotnetCoreHelloWorldTutorial\\DotnetCoreHelloWorldTutorial\\DotnetCoreHelloWorldTutorial.csproj",
+      "projectPath": "D:\\Repos\\DotNetCoreExample\\DotnetCoreHelloWorldTutorial\\DotnetCoreHelloWorldTutorial.csproj",
       "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual-2007-project\\DotnetCoreHelloWorldTutorial\\DotnetCoreHelloWorldTutorial\\obj\\",
+      "outputPath": "D:\\Repos\\DotNetCoreExample\\DotnetCoreHelloWorldTutorial\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
