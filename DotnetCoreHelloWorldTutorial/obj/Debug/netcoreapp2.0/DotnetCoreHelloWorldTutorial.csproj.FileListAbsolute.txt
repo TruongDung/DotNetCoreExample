@@ -1,0 +1,11 @@
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\bin\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.deps.json
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\bin\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.runtimeconfig.json
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\bin\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.runtimeconfig.dev.json
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\bin\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.dll
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\bin\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.pdb
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\obj\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.csprojAssemblyReference.cache
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\obj\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.csproj.CoreCompileInputs.cache
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\obj\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.AssemblyInfoInputs.cache
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\obj\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.AssemblyInfo.cs
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\obj\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.dll
+D:\Visual-2007-project\DotnetCoreHelloWorldTutorial\DotnetCoreHelloWorldTutorial\obj\Debug\netcoreapp2.0\DotnetCoreHelloWorldTutorial.pdb
