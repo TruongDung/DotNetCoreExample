@@ -7,9 +7,19 @@ namespace DotnetCoreHelloWorldTutorial
     class DelegateEvent
     {
 
-        public int Add(int a,int b)
+        static int Add(int a, int b)
         {
             return a + b;
+        }
+
+        static int Sub(int a, int b)
+        {
+            return a - b;
+        }
+
+        static int calculate(int a, int b, calculation ca)
+        {
+            return ca(a, b);
         }
     }
 }

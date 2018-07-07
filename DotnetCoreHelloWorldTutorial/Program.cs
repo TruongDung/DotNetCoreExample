@@ -46,9 +46,7 @@ namespace DotnetCoreHelloWorldTutorial
 
             //Console.WriteLine(str1);
 
-            //var result = Fruits.Where(w => !w.Contains(" ") && !String.IsNullOrEmpty(w.ToString()))
-            //    .OrderByDescending(w=>w.ToString().Length)
-            //    .ToList();
+
 
             //foreach (var item in result)
             //{
@@ -80,185 +78,6 @@ namespace DotnetCoreHelloWorldTutorial
             ClockTower c = new ClockTower(1000);
             Thread.Sleep(3000);
         }
-
-        public sealed class ClockTower
-        {
-            private readonly Stopwatch _stopWatch = new Stopwatch();
-            private readonly int _delayMilliseconds;
-
-            public ClockTower(int delayMilliseconds)
-            {
-                _stopWatch.Start();
-                _delayMilliseconds = delayMilliseconds;
-                DelayedChime();
-            }
-
-            public delegate void ChimeEventHandler(object sender, ChimeEventArgs e);
-            public event ChimeEventHandler OnChime;
-            public async void DelayedChime()
-            {
-                //await Task.Delay(_delayMilliseconds);
-                //ChimeEventArgs e = new ChimeEventArgs(_stopWatch.ElapsedMilliseconds);
-                OnChime += new ChimeEventHandler(HeardIt);
-                //HeardIt(this, e);
-
-                //await Task.Delay(_delayMilliseconds);
-                //HeardIt(this, e);
-
-                await Task.Delay(_delayMilliseconds);
-                OnChime(this, new ChimeEventArgs(_stopWatch.ElapsedMilliseconds));
-
-                await Task.Delay(_delayMilliseconds);
-                OnChime(this, new ChimeEventArgs(_stopWatch.ElapsedMilliseconds));
-
-            }
-            private void HeardIt(object sender, ChimeEventArgs e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-
-        public class ChimeEventArgs
-        {
-            public ChimeEventArgs(long milliseconds)
-            {
-                Message = String.Format("The clock chimed after {0} seconds", milliseconds / 1000M);
-            }
-
-            public string Message { get; set; }
-        }
-
-        public abstract class Robot
-        {
-            private readonly List<string> _laws = new List<string>
-            {
-                "A robot may not injure a human being or, through inaction, allow a human being to come to harm.",
-                "A robot must obey the orders given it by human beings, except where such orders would conflict with the First Law.",
-                "A robot must protect its own existence as long as such protection does not conflict with the First or Second Law."
-            };
-
-            protected Robot(Version version)
-            {
-                Version = version;
-            }
-
-            public abstract string Greeting();
-
-            public Version Version { get; set; }
-
-            public virtual List<string> GetLaws()
-            {
-                return _laws;
-            }
-        }
-
-        public class Sonny : Robot
-        {
-            public Sonny(Version v):base(v)
-            {
-
-            }
-            public override string Greeting()
-            {
-                return "Hello, my name is Sonny";
-            }
-        }
-
-        static readonly string[] Fruits = new[]
-        {
-            "Acai",
-            "Apple",
-            "Apricots",
-            "Banana",
-            "Blackberry",
-            "",
-            "Blueberry",
-            "Cherries",
-            "Coconut",
-            "Cranberry ",
-            "Cucumber",
-            "Currents",
-            "Dates",
-            "Durian",
-            "Fig",
-            "Goji berries",
-            "Gooseberry",
-            "Grapefruit",
-            "Grapes",
-            "Jackfruit",
-            "Kiwi",
-            "Kumquat",
-            "Lemon",
-            "Lime",
-            "Lucuma",
-            " Lychee",
-            "Mango",
-            "Mangosteen",
-            "Melon",
-            "",
-            "Mulberry",
-            "Nectarine",
-            "Orange",
-            "Papaya",
-            "Passion Fruit",
-            "Peach",
-            "Pear",
-            "Pineapple ",
-            "Plum",
-            "Pomegranate",
-            "Pomelo",
-            "Prickly Pear",
-            "Prunes",
-            "Raspberries",
-            "Strawberries",
-            "Tangerine",
-            "Watermelon"
-        };
-
-        public class Response<T>
-        {
-            public bool Success { get; set; }
-            public int StatusCode { get; set; }
-            public T Data { get; set; }
-        }
-
-        public class ResponseString
-        {
-            public bool Success { get; set; }
-            public int StatusCode { get; set; }
-            public string Data { get; set; }
-        }
-
-        public class ResponseDecimal
-        {
-            public bool Success { get; set; }
-            public int StatusCode { get; set; }
-            public decimal? Data { get; set; }
-        }
-
-        public class ResponseDateTime
-        {
-            public bool Success { get; set; }
-            public int StatusCode { get; set; }
-            public DateTime Data { get; set; }
-        }
-
-
-        static int Add(int a, int b)
-        {
-            return a + b;
-        }
-
-         static int Sub(int a, int b)
-        {
-            return a - b;
-        }
-
-        static int calculate(int a, int b, calculation ca)
-        {
-            return ca(a,b);
-        }
-        
 
         public static Boolean isPalindrome(int x)
         {
@@ -292,11 +111,11 @@ namespace DotnetCoreHelloWorldTutorial
                 {
                     b1.Add(bills[i]);
                 }
-                else if (bills[i] > 5 && b1.Count>0)
+                else if (bills[i] > 5 && b1.Count > 0)
                 {
                     foreach (var item in b1)
                     {
-                        if(item == 5)
+                        if (item == 5)
                         {
                             b1.Remove(item);
                             b1.Add(bills[i]);
