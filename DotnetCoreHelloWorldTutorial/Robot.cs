@@ -24,8 +24,6 @@ namespace DotnetCoreHelloWorldTutorial
         {
             return _laws;
         }
-
-        
     }
 
     public class Sonny : Robot
