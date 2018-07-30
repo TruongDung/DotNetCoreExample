@@ -14,6 +14,8 @@ namespace DotnetCoreHelloWorldTutorial
         public static void Main(string[] args)
         {
             Console.WriteLine(time.ToString());
+            GFG.getMaxOccuringChar("abbdccc");
+            Console.Read();
         }
 
         public static int[][] Transpose(int[][] A)
