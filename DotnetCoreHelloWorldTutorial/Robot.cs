@@ -24,6 +24,8 @@ namespace DotnetCoreHelloWorldTutorial
         {
             return _laws;
         }
+
+        
     }
 
     public class Sonny : Robot
@@ -35,6 +37,13 @@ namespace DotnetCoreHelloWorldTutorial
         public override string Greeting()
         {
             return "Hello, my name is Sonny";
+        }
+
+        public override List<string> GetLaws()
+        {
+            List<string> laws = base.GetLaws();
+            laws.Add("A robot may not harm humanity, or, by inaction, allow humanity to come to harm");
+            return laws;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace DotnetCoreHelloWorldTutorial
 {
@@ -56,8 +57,21 @@ namespace DotnetCoreHelloWorldTutorial
             "Tangerine",
             "Watermelon"
         };
-        //var result = Fruits.Where(w => !w.Contains(" ") && !String.IsNullOrEmpty(w.ToString()))
-        //    .OrderByDescending(w=>w.ToString().Length)
-        //    .ToList();
+
+        public void test()
+        {
+            var result = Fruits
+                .Select(s=>s.Trim())
+                .Where(w => !w.Contains(" ") && !String.IsNullOrEmpty(w.ToString()))
+                .OrderByDescending(w => w.ToString().Length)
+                .Select(s=>s.ToLower())
+                .ToList();
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            //Console.WriteLine(result.ToString());
+        }
     }
 }

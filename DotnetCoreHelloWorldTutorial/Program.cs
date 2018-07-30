@@ -2,18 +2,65 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using System.Threading.Tasks;
-using System.Threading;
-using System.Diagnostics;
-
 namespace DotnetCoreHelloWorldTutorial
 {
     public delegate int calculation(int a, int b);
+
     class Program
     {
+        static String location;
+        static DateTime time;
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+
+
+            Console.WriteLine(time.ToString());
+
+            List<string> dates = new List<string>();
+
+            //dates[0]
+            //lst.Add("10");
+            //lst.Add("20th Oct 2052");
+            //lst.Add("6th Jun 1933");
+            //lst.Add("26th May 1960");
+            //lst.Add("20th Sep 1958");
+
+            //lst.RemoveAt(0);
+            List<string> newLst = new List<string>();
+            foreach (var item in dates)
+            {
+                var data = item.Split(" ");
+                var month = "";
+                switch (data[1])
+                {
+                    case "Jan":month = "1";break;
+                    case "Feb":month = "2";break;
+                    case "Mar":month = "3";break;
+                    case "Apr":month = "4";break;
+                    case "May":month = "5";break;
+                    case "Jun":month = "6";break;
+                    case "Jul":month = "7";break;
+                    case "Aug":month = "8";break;
+                    case "Sep":month = "9";break;
+                    case "Oct":month = "10";break;
+                    case "Nov":month = "11";break;
+                    case "Dec":month = "12"; break;
+                }
+
+                var dateString = data[0];
+
+                var length = dateString.Length - 2;
+                var newDateString = dateString.Substring(0, length);
+
+         
+                newLst.Add(string.Format("{0}-{1}-{2}", data[2], month, newDateString));
+            }
+
+
+
+            //Console.WriteLine(location == null ? "location is null" : location);
+            //Console.WriteLine(time == null ? "time is null" : time.ToString());
             //Console.WriteLine("Hello World!");
 
             //Student s = new Student();
@@ -46,8 +93,6 @@ namespace DotnetCoreHelloWorldTutorial
 
             //Console.WriteLine(str1);
 
-
-
             //foreach (var item in result)
             //{
             //    Console.WriteLine(item.ToString());
@@ -73,10 +118,87 @@ namespace DotnetCoreHelloWorldTutorial
             //{
             //    Console.WriteLine("Law #{0}: {1}", laws.IndexOf(law) + 1, law);
             //}
+
+            //int[][] x = new int[5][];
+            //x[0] = new int[3] { 1, 2, 3 };
+            //x[1] = new int[3] { 4, 5, 6 };
+
+            //int a = x[0].Length;
+            //Transpose(x);
             //Console.ReadLine();
 
-            ClockTower c = new ClockTower(1000);
-            Thread.Sleep(3000);
+            //ClockTower c = new ClockTower(1000);
+            //Thread.Sleep(3000);
+
+            //int i= 10;
+            //string str = i.ToString();
+            //char a[i] = str.ToCharArray();
+            //var a = str.ToCharArray();
+            //LinqExample le = new LinqExample();
+            //le.test();
+
+            //var t = new List<int>();
+            //t.Add(1);
+            //t.Add(2);
+            //var a = t.Where(x => x % 2 == 0).Distinct();
+
+            //string value = "dot net perls";
+            //value = value.UppercaseFirstLetter();
+            merge();
+            Console.ReadLine();
+        }
+
+        public static void merge()
+        {
+            string first = "abc";
+            string second = "def123456";
+
+            var first1 = first.ToCharArray();
+            var second1 = second.ToCharArray();
+
+            var resultStr = "";
+            var aaa = first1.Concat(second1).ToArray();
+            int i = 0;
+            int j = 0;
+            while(i < first1.Length && j < second1.Length)
+            {
+                string str = first1[i] + second1[j].ToString();
+                resultStr += str;
+                i++;
+                j++;
+            }
+
+            while(i < first1.Length)
+            {
+                string str = first1[j].ToString();
+                resultStr += str;
+                i++;
+            }
+            while(j < second1.Length)
+            {
+                string str = second1[j].ToString();
+                resultStr += str;
+                j++;
+            }
+        }
+
+        public static int[][] Transpose(int[][] A)
+        {
+            int w = A[0].Length;
+            int h = A[1].Length;
+
+            int[][] B = new int [w][];
+            for (int i = 0; i < h; i++)
+            {
+                B[i] = new int[h];
+            }
+            for (int i = 0; i < w; i++)
+                for (int j = 0; j < h; j++)
+                {
+                    B[i][j] = A[i][j];
+                }
+
+            return B;
         }
 
         public static Boolean isPalindrome(int x)
@@ -127,4 +249,5 @@ namespace DotnetCoreHelloWorldTutorial
             return false;
         }
     }
+
 }
