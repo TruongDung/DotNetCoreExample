@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace DotnetCoreHelloWorldTutorial
 {
@@ -9,25 +11,35 @@ namespace DotnetCoreHelloWorldTutorial
         static int ASCII_SIZE = 256;
         public static char getMaxOccuringChar(String str)
         {
-            // Create array to keep the count of
-            // individual characters and 
-            // initialize the array as 0
-            int[] count = new int[ASCII_SIZE];
-
-            // Construct character count array
-            // from the input string.
-            int len = str.Length;
-            for (int i = 0; i < len; i++)
-                count[str[i]]++;
-
-            int max = -1; // Initialize max count
-            char result = ' '; // Initialize result
-
-            // Traversing through the string and 
-            // maintaining the count of each character
-            for (int i = 0; i < len; i++)
+            var ht = new Dictionary<Char, int>();
+            foreach (char item in str)
             {
-                if (max < count[str[i]])
+                if (ht.ContainsKey(item))
+                {
+                    int cnt = (int)ht[item];
+                    ht[item] = cnt + 1;
+                }
+                else
+                {
+                    ht.Add(item, 1);
+                }
+            }
+            return ht.OrderByDescending(x => x.Value).First().Key;
+        }
+        public static char getMaxOccuringChar1(String str)
+        {
+            var result = ' ';
+
+            var count = new int[256];
+            for (int i = 0; i < str.Length; i++)
+            {
+                count[str[i]]++;
+            }
+
+            int max = -1;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if(max < count[str[i]])
                 {
                     max = count[str[i]];
                     result = str[i];

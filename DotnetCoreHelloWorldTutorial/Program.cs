@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace DotnetCoreHelloWorldTutorial
 {
@@ -8,14 +12,43 @@ namespace DotnetCoreHelloWorldTutorial
 
     class Program
     {
-        static String location;
         static DateTime time;
 
         public static void Main(string[] args)
         {
-            Console.WriteLine(time.ToString());
-            GFG.getMaxOccuringChar("abbdccc");
-            Console.Read();
+            //TwoSumArray.solution();
+            //Graph g 
+            //var a = 10 << 32;
+            //EncryptString("aaa");
+            //GetFileStream();
+            //var aaa = Prime.checkIsPrime(15);
+            Prime.breakNumber(156897);
+            Console.WriteLine();
+
+        }
+
+        public static string removeOccur(string input)
+        {
+            var ht = new Hashtable();
+            var data = removeOccur("ABCADEAFBAGHB");
+            //string  = "ABCADEAFBAGHB";
+            // output: ABCDEAFGHB
+
+            var dic = new Dictionary<char, char>();
+            foreach (char item in input)
+            {
+                if (!dic.ContainsValue(item))
+                {
+                    dic.Add(item, item);
+                }
+            }
+
+            string result = string.Empty;
+            foreach (var item in dic)
+            {
+                result += item.Value;
+            }
+            return result;
         }
 
         public static int[][] Transpose(int[][] A)
@@ -83,6 +116,51 @@ namespace DotnetCoreHelloWorldTutorial
                 }
             }
             return false;
+        }
+
+        private static string EncryptString(string clearText, string Key = "XXXXX")
+        {
+            if (String.IsNullOrEmpty(clearText))
+            {
+                throw new ArgumentNullException("String to be encrypted cannot be null.");
+            }
+
+            byte[] keyBytes = ASCIIEncoding.ASCII.GetBytes(Key);
+
+            DESCryptoServiceProvider cryptoProvider = new DESCryptoServiceProvider();
+            MemoryStream memoryStream = new MemoryStream();
+            CryptoStream cryptoStream = new CryptoStream(memoryStream, cryptoProvider.CreateEncryptor(keyBytes, keyBytes), CryptoStreamMode.Write);
+            StreamWriter writer = new StreamWriter(cryptoStream);
+            writer.Write(clearText);
+            writer.Flush();
+            cryptoStream.FlushFinalBlock();
+            writer.Flush();
+
+            var encrypted = Convert.ToBase64String(memoryStream.GetBuffer(), 0, (int)memoryStream.Length);
+
+            return encrypted;
+        }
+
+        private static FileStream GetFileStream()
+        {
+            const int maxRetries = 5;
+            string fileName = "FILE_NAM1E.txt";
+
+            int attempts = maxRetries;
+            FileStream fileStream = null;
+
+            try
+            {
+                fileStream = File.Open(fileName, System.IO.FileMode.Open);
+            }
+            catch (Exception)
+            {
+                attempts--;
+                if (attempts == 0)
+                    throw;
+            }
+
+            return fileStream;
         }
     }
 
