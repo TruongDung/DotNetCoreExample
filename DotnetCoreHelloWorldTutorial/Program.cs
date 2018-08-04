@@ -22,7 +22,8 @@ namespace DotnetCoreHelloWorldTutorial
             //EncryptString("aaa");
             //GetFileStream();
             //var aaa = Prime.checkIsPrime(15);
-            Prime.breakNumber(156897);
+            //Prime.breakNumber(156897);
+            PhoneNumberFormat.FormatString1("aaa    bbb   ");
             Console.WriteLine();
 
         }
