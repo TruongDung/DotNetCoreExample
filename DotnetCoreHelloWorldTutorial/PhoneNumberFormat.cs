@@ -27,7 +27,9 @@ namespace DotnetCoreHelloWorldTutorial
             // then replace Xs to empty
             string hello = rgx.Replace(S, "");
 
-            rgx = new Regex("(?<=\\G\\d{3})(?!$)");
+            //rgx = new Regex("(?<=\\G\\d{3})(?!$)");
+
+            rgx = new Regex("(?<=\\G\\d{3})");
 
             hello = rgx.Replace(hello, "-");
 

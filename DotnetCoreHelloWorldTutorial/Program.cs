@@ -23,9 +23,79 @@ namespace DotnetCoreHelloWorldTutorial
             //GetFileStream();
             //var aaa = Prime.checkIsPrime(15);
             //Prime.breakNumber(156897);
-            PhoneNumberFormat.FormatString1("aaa    bbb   ");
-            Console.WriteLine();
+            //PhoneNumberFormat.FormatString1("aaa    bbb   ");
+            //string aaa = ReverseArray.solution();
 
+            //var result = StraightLineArray.check(3, new int[] { 2, 3, 5, 5,4,7,8,9 });
+
+
+            //LinkedList lk = new LinkedList();
+            //lk.Add("A");
+            //lk.Add("B");
+            //lk.printAllNodes();
+            //Console.WriteLine();
+            //Fibo.solution(9);
+
+            //int result = 0;
+            //var arr = new int[] { 10, 7, 4, 8, 12, 9 };
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    if (arr[i] + arr[i + 1] == arr[i + 2])
+            //    {
+            //        result = arr[i + 1];
+            //    }
+            //    if (i + 2 == arr.Length)
+            //        break;
+            //}
+
+            Console.Read();
+
+        }
+
+       
+
+         public static int stock_prices_yesterday(int [] arr)
+         {
+            int result = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] + arr[i + 1] == arr[i + 2])
+                {
+                    result = arr[i + 1];
+                }
+                if (i + 2 == arr.Length)
+                    break;
+            }
+            return result;
+         }
+
+        public static int getTheNthElement(int n, int[] arr1, int[] arr2)
+        {
+
+            int i = 0, j = 0, k = 0;
+            int n1 = arr1.Length;
+            int n2 = arr2.Length;
+            int[] arr3 = new int[n1 + n2];
+            while (i < n1 && j < n2)
+            {
+                if (arr1[i] < arr2[j])
+                    arr3[k++] = arr1[i++];
+                else
+                    arr3[k++] = arr2[j++];
+            }
+            while (i < n1)
+                arr3[k++] = arr1[i++];
+
+            while (j < n2)
+                arr3[k++] = arr2[j++];
+
+
+            for (int m = 0; m < arr3.Length; m++)
+            {
+                if (m == n)
+                    return arr3[m];
+            }
+            return 0;
         }
 
         public static string removeOccur(string input)
@@ -163,6 +233,51 @@ namespace DotnetCoreHelloWorldTutorial
 
             return fileStream;
         }
+    }
+
+}
+
+
+public class Node
+{
+    public Node next;
+    public Object data;
+}
+
+public class LinkedList
+{
+    public class Node
+    {
+        // link to next Node in list
+        public Node next = null;
+        // value of this Node
+        public object data;
+    }
+
+    private Node root = null;
+
+    public Node First { get { return root; } }
+
+    public Node Last
+    {
+        get
+        {
+            Node curr = root;
+            if (curr == null)
+                return null;
+            while (curr.next != null)
+                curr = curr.next;
+            return curr;
+        }
+    }
+
+    public void Add(Object value)
+    {
+        Node n = new Node { data = value };
+        if (root == null)
+            root = n;
+        else
+            Last.next = n;
     }
 
 }
