@@ -16,40 +16,7 @@ namespace DotnetCoreHelloWorldTutorial
 
         public static void Main(string[] args)
         {
-            //TwoSumArray.solution();
-            //Graph g 
-            //var a = 10 << 32;
-            //EncryptString("aaa");
-            //GetFileStream();
-            //var aaa = Prime.checkIsPrime(15);
-            //Prime.breakNumber(156897);
-            //PhoneNumberFormat.FormatString1("aaa    bbb   ");
-            //string aaa = ReverseArray.solution();
-
-            //var result = StraightLineArray.check(3, new int[] { 2, 3, 5, 5,4,7,8,9 });
-
-
-            //LinkedList lk = new LinkedList();
-            //lk.Add("A");
-            //lk.Add("B");
-            //lk.printAllNodes();
-            //Console.WriteLine();
-            //Fibo.solution(9);
-
-            //int result = 0;
-            //var arr = new int[] { 10, 7, 4, 8, 12, 9 };
-            //for (int i = 0; i < arr.Length; i++)
-            //{
-            //    if (arr[i] + arr[i + 1] == arr[i + 2])
-            //    {
-            //        result = arr[i + 1];
-            //    }
-            //    if (i + 2 == arr.Length)
-            //        break;
-            //}
-
             Console.Read();
-
         }
 
        
