@@ -4,5 +4,7 @@ using System.Text;
 
 namespace DotnetCoreHelloWorldTutorial
 {
-   
+    class Tree
+    {
+    }
 }

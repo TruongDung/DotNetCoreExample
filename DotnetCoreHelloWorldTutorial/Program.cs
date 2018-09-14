@@ -9,6 +9,65 @@ using System.Text;
 namespace DotnetCoreHelloWorldTutorial
 {
     public delegate int calculation(int a, int b);
+    public class Person
+    {
+        private string firstName;
+        public string FirstName
+        {
+            get
+            {
+                return this.firstName.ToUpper();
+            }
+            set
+            {
+                this.firstName = value;
+            }
+        }
+        public string LastName { get; set; }
+        public int Age { get; set; }
+        public int HealthPlanId { get; set; }
+    }
+
+    public class Client
+    {
+        public Client(Person person)
+        {
+            // Do stuff
+        }
+    }
+
+    public class BaseClass
+    {
+        protected string Config1 { get; set; }
+        protected int Config2 { get; set; }
+
+        public BaseClass(string config1, int config2)
+        {
+            Config1 = config1;
+            Config2 = config2;
+        }
+
+        public virtual string GetResults()
+        {
+            return Config1 + Config2;
+        }
+    }
+
+    public class InheritClass : BaseClass
+    {
+        protected int repetitions;
+        public InheritClass(string config1, int config2, int repetitions) : base(config1, config2)
+        {
+            this.repetitions = repetitions;
+        }
+
+        public override string GetResults()
+        {
+            return base.GetResults() + ", " + this.repetitions;
+        }
+    }
+
+
 
     class Program
     {
@@ -16,6 +75,19 @@ namespace DotnetCoreHelloWorldTutorial
 
         public static void Main(string[] args)
         {
+            BinarySearchTree bst = new BinarySearchTree();
+            //Node root = null;
+            //root = bst.Insert(root, 10);
+            //root = bst.Insert(root, 20);
+            //root = bst.Insert(root, 30);
+            //root = bst.Insert(root, 40);
+            //root = bst.Insert(root, 5);
+            //root = bst.Insert(root, 3);
+
+            //bst.TravelIn(root);
+            //var isBST = bst.isBST(root);
+
+            bst.removeDuplicate("geeksforgeeks");
             Console.Read();
         }
 
@@ -86,6 +158,7 @@ namespace DotnetCoreHelloWorldTutorial
             {
                 result += item.Value;
             }
+
             return result;
         }
 
